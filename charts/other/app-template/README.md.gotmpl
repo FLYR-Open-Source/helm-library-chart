@@ -1,5 +1,5 @@
 {{- define "custom.helm.url" -}}
-https://bjw-s.github.io/helm-charts/
+https://flyr-open-source.github.io/library-helm-chart/
 {{- end -}}
 
 {{ template "chart.header" . }}
@@ -22,10 +22,10 @@ https://bjw-s.github.io/helm-charts/
 
 ```bash
 # Add the repository
-helm repo add bjw-s {{template "custom.helm.url"}}
+helm repo add flyr-open-source {{template "custom.helm.url"}}
 
 # Install the chart
-helm install bjw-s app-template -f values.yaml
+helm install flyr-open-source app-template -f values.yaml
 ```
 
 ## Configuration
@@ -35,12 +35,11 @@ The [CI tests](../../library/common-test/ci) contain a number of scenarios that 
 
 ## Upgrade instructions
 
-Upgrade instructions can be found in the [documentation](https://bjw-s.github.io/helm-charts/docs/app-template/#upgrade-instructions).
+Upgrade instructions can be found in the [documentation](https://flyr-open-source.github.io/library-helm-chart/docs/app-template/#upgrade-instructions).
 
 ## Support
 
-- See the [Docs](http://bjw-s.github.io/helm-charts/docs/)
-- Open an [issue](https://github.com/bjw-s/helm-charts/issues/new/choose)
-- Join the home-operations [Discord](https://discord.gg/home-operations) community
+- See the [Docs](http://flyr-open-source.github.io/library-helm-chart/docs/)
+- Open an [issue](https://github.com/FLYR-Open-Source/library-helm-chart/issues/new/choose)
 
 {{ template "helm-docs.versionFooter" . }}

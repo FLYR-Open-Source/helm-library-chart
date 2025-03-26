@@ -2,15 +2,15 @@
 apiVersion: v2
 description: A common powered chart template. This can be useful for small projects that don't have their own chart.
 name: app-template
-version: 4.15.1
+version: 4.15.2
 kubeVersion: ">=1.22.0-0"
 maintainers:
   - name: bjw-s
     email: me@bjw-s.dev
 dependencies:
   - name: common
-    repository: oci://ghcr.io/davidspek/helm
-    version: 4.15.1
+    repository: oci://ghcr.io/flyr-open-source/helm
+    version: 4.15.2
 sources:
   - https://github.com/FLYR-Open-Source/helm-library-chart
 annotations:
