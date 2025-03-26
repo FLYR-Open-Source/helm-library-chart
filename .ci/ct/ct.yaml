@@ -11,4 +11,4 @@ chart-dirs:
   - charts/other
 
 chart-repos:
-  - bjw-s=https://davidspek.github.io/bjw-s-helm-charts
+  - bjw-s=https://FLYR-Open-Source.github.io/helm-library-chart

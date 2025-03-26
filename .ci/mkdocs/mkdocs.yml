@@ -1,12 +1,12 @@
 ---
 # Project information
-site_name: davidspek bjw-s Helm Charts
-site_url: https://davidspek.github.io/bjw-s-helm-charts/
-site_author: davidspek
+site_name: Flyr Helm Library Chart
+site_url: https://FLYR-Open-Source.github.io/helm-library-chart/
+site_author: FLYR-Open-Source
 
 # Repository
-repo_name: davidspek/bjw-s-helm-charts/
-repo_url: https://github.com/davidspek/bjw-s-helm-charts/
+repo_name: FLYR-Open-Source/bjw-s-helm-charts/
+repo_url: https://github.com/FLYR-Open-Source/helm-library-chart/
 
 # Configuration
 docs_dir: ../../docs
