@@ -13,7 +13,7 @@ maintainers:
   - name: bjw-s
     email: me@bjw-s.dev
 sources:
-  - https://github.com/FLYR-Open-Source/helm-library-charts
+  - https://github.com/FLYR-Open-Source/helm-library-chart
 annotations:
   artifacthub.io/changes: |-
     - kind: fixed
