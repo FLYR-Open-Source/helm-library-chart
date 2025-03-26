@@ -1,5 +1,4 @@
 name: "Pull Request: Validate"
-
 on:
   pull_request:
     types:
