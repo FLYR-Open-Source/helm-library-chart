@@ -3,7 +3,7 @@ apiVersion: v2
 name: common
 description: Function library for Helm charts
 type: library
-version: 4.15.1
+version: 4.15.2
 kubeVersion: ">=1.22.0-0"
 keywords:
   - common
@@ -13,9 +13,9 @@ maintainers:
   - name: bjw-s
     email: me@bjw-s.dev
 sources:
-  - https://github.com/bjw-s/helm-charts
+  - https://github.com/FLYR-Open-Source/helm-library-charts
 annotations:
   artifacthub.io/changes: |-
     - kind: fixed
       description: |-
-        Publish chart to GitHub Container Registry
+        Publish to new fork
