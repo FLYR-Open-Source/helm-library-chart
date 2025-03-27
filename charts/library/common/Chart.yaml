@@ -10,8 +10,8 @@ keywords:
   - library
 home: https://github.com/FLYR-Open-Source/helm-library-charts/tree/main/charts/library/common
 maintainers:
-  - name: bjw-s
-    email: me@bjw-s.dev
+  - name: David van der Spek
+    email: david.vanderspek@flyr.com
 sources:
   - https://github.com/FLYR-Open-Source/helm-library-chart
 annotations:
