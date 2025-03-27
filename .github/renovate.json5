@@ -1,7 +1,0 @@
-{
-  extends: [
-    "github>bjw-s/renovate-config",
-    "github>bjw-s/renovate-config:automerge-github-actions",
-    "github>bjw-s/helm-charts//.github/renovate/custom-managers.json5"
-  ],
-}

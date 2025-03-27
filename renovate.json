@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":prHourlyLimit4",
+    ":semanticCommits",
+    ":prConcurrentLimit10",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "enabled": true
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Process common lib json schema references",
+      "fileMatch": ["\\.json$"],
+      "matchStrings": [
+        "https:\\/\\/raw.githubusercontent.com\\/FLYR-Open-Source\\/helm-library-chart\\/(?<depName>\\S+?)-(?<currentValue>[\\d\\.]+?)\\/\\S+"
+      ],
+      "datasourceTemplate": "helm",
+      "versioningTemplate": "semver",
+      "registryUrlTemplate": "https://flyr-open-source.github.io/helm-library-chart"
+    }
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "separateMinorPatch": true
+}
