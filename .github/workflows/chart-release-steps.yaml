@@ -57,18 +57,18 @@ jobs:
       # Setup
       # ----------------------------
       - name: Checkout source branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
         with:
           path: src
 
       - name: Install Helm
-        uses: azure/setup-helm@v4
+        uses: azure/setup-helm@v4.3.0
         with:
           version: ${{ inputs.helmVersion }}
 
       - name: Login to OCI Registry
         if: ${{ inputs.publishToOciRegistry }}
-        uses: docker/login-action@v3
+        uses: docker/login-action@v3.4.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -96,7 +96,7 @@ jobs:
 
       - name: Format changelog
         id: format-changelog
-        uses: actions/github-script@v7
+        uses: actions/github-script@v7.0.1
         with:
           script: |
             let input = '${{ steps.chart-details.outputs.changes }}';
@@ -149,7 +149,7 @@ jobs:
       # Add chart to GitHub Pages
       # ----------------------------
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
         if: ${{ inputs.publishToGhPages }}
         with:
           path: gh-pages
@@ -183,7 +183,7 @@ jobs:
 
       - name: Commit Changes
         if: ${{ inputs.publishToGhPages }}
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v5.1.0
         with:
           commit_message: "feat: Add Chart package ${{ steps.chart-folder.outputs.chart_folder }}/${{ steps.chart-details.outputs.name }}-${{ steps.chart-details.outputs.version }}"
           repository: gh-pages
@@ -205,13 +205,13 @@ jobs:
       # ----------------------------
       - name: Create tag
         if: ${{ inputs.createGithubRelease }}
-        uses: EndBug/latest-tag@latest
+        uses: EndBug/latest-tag@v1.6.2
         with:
           ref: ${{ steps.chart-details.outputs.name }}-${{ steps.chart-details.outputs.version }}
           git-directory: src
 
       - name: Create release for tag
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1.16.0
         if: ${{ inputs.createGithubRelease }}
         with:
           allowUpdates: true
