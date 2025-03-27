@@ -22,7 +22,7 @@ jobs:
       chartsToInstall: ${{ steps.charts-to-install.outputs.filteredCharts }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
 
@@ -34,11 +34,11 @@ jobs:
 
       - name: Get all added or modified files
         id: added-modified-files
-        uses: tj-actions/changed-files@v46.0.3
+        uses: tj-actions/changed-files@823fcebdb31bb35fdf2229d9f769b400309430d0 # v46.0.3
 
       - name: Get changed charts
         id: changed-charts
-        uses: tj-actions/changed-files@v46.0.3
+        uses: tj-actions/changed-files@823fcebdb31bb35fdf2229d9f769b400309430d0 # v46.0.3
         with:
           matrix: true
           path: charts
@@ -47,7 +47,7 @@ jobs:
 
       - name: Determine charts to lint
         id: charts-to-lint
-        uses: actions/github-script@v7.0.1
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           script: |
             var changedCharts = ${{ steps.changed-charts.outputs.all_changed_files }};
@@ -57,7 +57,7 @@ jobs:
 
       - name: Determine charts to install
         id: charts-to-install
-        uses: actions/github-script@v7.0.1
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
         with:
           script: |
             var changedCharts = ${{ steps.changed-charts.outputs.all_changed_files }};
@@ -72,10 +72,10 @@ jobs:
       - prepare
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Run against changes
-        uses: pre-commit/action@v3.0.1
+        uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
         with:
           extra_args: --files ${{ needs.prepare.outputs.addedOrModifiedFiles }} --config .ci/pre-commit/config.yaml
 
