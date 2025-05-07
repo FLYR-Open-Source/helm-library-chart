@@ -185,6 +185,9 @@ components: {}
 #       # -- Set podManagementPolicy, valid values are Parallel and OrderedReady (default).
 #       podManagementPolicy:
 
+#       # -- Set minReadySeconds, default is 0
+#       minReadySeconds: 0
+
 #       # -- Used to create individual disks for each instance.
 #       volumeClaimTemplates: []
 #       # - name: data
