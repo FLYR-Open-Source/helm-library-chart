@@ -19,6 +19,7 @@ apiVersion: {{ $resourceObject.apiVersion }}
 kind: {{ $resourceObject.kind }}
 metadata:
   name: {{ $resourceObject.name }}
+  namespace: {{ $rootContext.Release.Namespace }}
   {{- with $labels }}
   labels:
     {{- range $key, $value := . }}
