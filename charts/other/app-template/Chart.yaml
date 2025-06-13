@@ -10,7 +10,7 @@ maintainers:
 dependencies:
   - name: common
     repository: oci://ghcr.io/flyr-open-source/helm
-    version: 4.15.2
+    version: 4.15.3
 sources:
   - https://github.com/FLYR-Open-Source/helm-library-chart
 annotations:
