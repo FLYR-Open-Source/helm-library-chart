@@ -42,7 +42,7 @@ spec:
   {{- else }}
   replicas: 1
   {{- end }}
-  {{- with $statefulsetObject.minReadySeconds }}
+  {{- with dig "statefulset" "minReadySeconds" nil $statefulsetObject }}
   minReadySeconds: {{ . }}
   {{- end }}
   podManagementPolicy: {{ dig "statefulset" "podManagementPolicy" "OrderedReady" $statefulsetObject }}

@@ -21,3 +21,14 @@ tests:
         equal:
           path: spec.minReadySeconds
           value: 15
+  - it: default minReadySeconds should pass for StatefulSet
+    set:
+      components.main:
+        type: statefulset
+    asserts:
+      - documentIndex: 0
+        isKind:
+          of: StatefulSet
+      - documentIndex: 0
+        notExists:
+          path: spec.minReadySeconds
