@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema",
-  "$id": "https://raw.githubusercontent.com/FLYR-Open-Source/helm-library-chart/common-4.15.2/charts/library/common/values.schema.json",
+  "$id": "https://raw.githubusercontent.com/FLYR-Open-Source/helm-library-chart/common-4.15.4/charts/library/common/values.schema.json",
   "type": "object",
   "properties": {
     "global": {

@@ -5,19 +5,18 @@ templates:
   - common.yaml
 values:
   - ../_values/components_main_default_container.yaml
+  - ../_values/advanced_mounts_invalid_component.yaml
 tests:
   - it: advancedMounts invalid component reference should fail
-    set:
-      persistence:
-        data:
-          type: emptyDir
-          advancedMounts:
-            test:
-              main:
-                - path: /data/config.yaml
-                  readOnly: false
-                  mountPropagation: HostToContainer
-                  subPath: config.yaml
     asserts:
       - failedTemplate:
           errorMessage: "No enabled component found with this identifier. (persistence item: 'data', component: 'test')"
+
+  - it: advancedMounts set to null with invalid component reference should pass
+    set:
+      persistence:
+        data:
+          advancedMounts:
+            test: null
+    asserts:
+      - notFailedTemplate: {}

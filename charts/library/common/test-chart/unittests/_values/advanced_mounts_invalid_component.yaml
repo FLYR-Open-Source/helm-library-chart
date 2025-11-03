@@ -1,0 +1,10 @@
+persistence:
+  data:
+    type: emptyDir
+    advancedMounts:
+      test:
+        main:
+          - path: /data/config.yaml
+            readOnly: false
+            mountPropagation: HostToContainer
+            subPath: config.yaml

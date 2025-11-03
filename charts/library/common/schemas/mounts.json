@@ -6,8 +6,9 @@
     }
   },
   "advancedMounts": {
+    "type": ["object", "null"],
     "additionalProperties": {
-      "type": "object",
+      "type": ["object", "null"],
       "additionalProperties": {
         "$ref": "#/mountPathCollection"
       }
