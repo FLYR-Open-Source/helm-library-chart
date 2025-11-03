@@ -1,0 +1,22 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json
+suite: component revisionHistoryLimit
+templates:
+  - common.yaml
+values:
+  - ../_values/components_main_default_container.yaml
+tests:
+  # StatefulSet
+  - it: setting minReadySeconds should pass for StatefulSet
+    set:
+      components.main:
+        type: statefulset
+        minReadySeconds: 15
+    asserts:
+      - documentIndex: 0
+        isKind:
+          of: StatefulSet
+      - documentIndex: 0
+        equal:
+          path: spec.minReadySeconds
+          value: 15

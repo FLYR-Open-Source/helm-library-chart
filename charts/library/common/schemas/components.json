@@ -335,6 +335,10 @@
       "podManagementPolicy": {
         "type": "string"
       },
+      "minReadySeconds": {
+        "type": "integer",
+        "default": 0
+      },
       "persistentVolumeClaimRetentionPolicy": {
         "type": "object",
         "additionalProperties": false,
