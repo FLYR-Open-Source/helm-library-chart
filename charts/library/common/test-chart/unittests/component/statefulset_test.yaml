@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json
-suite: component revisionHistoryLimit
+suite: component statefulset minReadySeconds
 templates:
   - common.yaml
 values:
@@ -11,7 +11,8 @@ tests:
     set:
       components.main:
         type: statefulset
-        minReadySeconds: 15
+        statefulset:
+          minReadySeconds: 15
     asserts:
       - documentIndex: 0
         isKind:
